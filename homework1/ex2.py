@@ -15,7 +15,8 @@ def get_numbers_ticket(min_value, max_value, quantity):
     list: Відсортований список всіх унікальних чисел
     """
     # Перевіряємо на недопустимі умови
-    if min_value > max_value or quantity > (max_value-min_value+1):
+    if (min_value > max_value or quantity > (max_value-min_value+1)) \
+        or (min_value < 1 or max_value > 1000):
         return []
 
     result = set()
@@ -29,5 +30,5 @@ def get_numbers_ticket(min_value, max_value, quantity):
 
 
     
-lottery_numbers = get_numbers_ticket(1, 49, 6)
+lottery_numbers = get_numbers_ticket(1, 1001, 6)
 print(f"Ваші лотерейні числа: {lottery_numbers}")
